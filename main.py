@@ -1,5 +1,5 @@
 import streamlit as st
-import google.generativeai as palm
+import google.generativeai as genai
 import mysql.connector
 import os
 from dotenv import load_dotenv
@@ -7,9 +7,9 @@ from dotenv import load_dotenv
 load_dotenv()
 
 GOOGLE_API_KEY = os.getenv("API_KEY")
-palm.configure(api_key=GOOGLE_API_KEY)
+genai.configure(api_key=GOOGLE_API_KEY)
 
-model = palm.GenerativeModel('models/gemini-pro')
+model = genai.GenerativeModel('models/gemini-pro')
 
 
 def func():
